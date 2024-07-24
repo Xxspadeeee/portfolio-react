@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.navbar {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  height: 80px;
+  background-color: #161616;
+  color: white;
+  position: fixed;
+  transition: background-color 0.3s ease;
+}
+.blur {
+  backdrop-filter: none;
+  background-color: rgba(14, 13, 13, 0.173);
+}
+.navbar-container {
+  width: 100%;
+  height: 100%;
+  align-content: center;
+}
+.navbar-container ul li a img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: start;
+}
+.navbar-container ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.navbar-container ul li {
+  margin: 0 10px;
+  font-size: 20px;
+  cursor: pointer;
+  list-style: none;
+  transition: 0.5s;
+}
+.navbar-container ul li a {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  padding: 5px;
+  font-size: 18px;
+  font-family: sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+
+.navbar-container ul:hover li a {
+  transform: scale(1);
+  opacity: 0.2;
+  filter: blur(2px);
+}
+.navbar-container ul li a:hover {
+  transform: scale(1.5);
+  opacity: 1;
+  filter: blur(0);
+  text-decoration: none;
+  color: #fff;
+}
+
+.navbar-container ul li a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #e57615;
+  transition: 0.5s;
+  transform-origin: right;
+  transform: scaleX(0);
+  z-index: -1;
+}
+
+.navbar-container ul li a:hover:before {
+  transition: transform 0.5s;
+  transform-origin: left;
+  transform: scaleX(1);
+}
